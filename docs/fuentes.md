@@ -12,8 +12,8 @@ Punto 2 del enunciado: direcciones consultadas, fecha de obtención, campos reco
 | Parámetros | `what` (tecnología), `where` (ciudad), `category=it-jobs`, `results_per_page=50` |
 | Fecha de obtención | _pendiente_ |
 | Llamadas realizadas | _pendiente_ (ver `data/raw/adzuna/<fecha>/registro_llamadas.csv`) |
-| Límites de uso | _anotar los del panel de desarrollador_ |
-| Condiciones de uso | _resumir los términos de servicio; captura en `docs/capturas/`_ |
+| Límites de uso | _anotar los del panel de desarrollador_ (los términos no publican cifras; se ven en el panel) |
+| Condiciones de uso | Revisadas el 2026-11-18 ([terms of service](https://developer.adzuna.com/docs/terms_of_service)). Uso permitido: búsqueda personal de empleo e investigación personal o académica; el análisis comercial, la reventa de datos y la prospección comercial requieren acuerdo escrito. Hay que citar «The Adzuna API» como fuente, con enlace a https://www.adzuna.es. Registro hecho con el uso «Personal or academic research». |
 | Script | `src/adzuna.py` |
 
 **Campos recogidos por oferta:** `id`, `title`, `description` (recortada), `created`, `company.display_name`, `location.display_name`, `location.area`, `salary_min`, `salary_max`, `salary_is_predicted`, `contract_type`, `contract_time`, `category`, `redirect_url`, `latitude`, `longitude`.
@@ -21,6 +21,14 @@ _Revisar y completar con la salida de `python src/adzuna.py --prueba`._
 
 **Qué aporta:** volumen de ofertas y salarios por tecnología y ciudad, e histograma de salarios.
 **Limitación conocida:** cuando la oferta no indica salario, Adzuna lo estima (`salary_is_predicted = 1`).
+
+**Prueba inicial (2026-11-18, 1 llamada: `what=python`, `where=barcelona`, `results_per_page=20`, sin `category`):**
+
+- `count` = 765 ofertas.
+- Solo 2 de 20 ofertas traen salario, y ninguna estimada (`salary_is_predicted = 0`). En esta muestra Adzuna **no** estima salarios en España: hay que comprobarlo con la descarga completa.
+- `contract_type` y `contract_time` vacíos en las 5 ofertas revisadas: `tipo_contrato` tendrá probablemente muchos nulos.
+- Primer atípico: «Python Developer» de Novartis con salario 420–780, que no puede ser anual (¿diario?). Ejemplo para la limpieza.
+- Captura: `docs/capturas/2026-11-18_prueba_adzuna.png`.
 
 ## 2. Web scraping de Tecnoempleo
 
