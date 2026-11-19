@@ -49,6 +49,7 @@ En `docs/fuentes.md` están las URL consultadas, la fecha de obtención, los cam
 │   └── diccionario_datos.md
 ├── notebooks/          # Cuadernos del análisis, en orden de ejecución
 ├── src/                # Código reutilizable: descarga, scraping y limpieza
+├── pruebas/            # Scripts con los que evaluamos las fuentes (18/11/2026)
 ├── .env.example        # Plantilla de las claves de la API
 ├── requirements.txt
 └── README.md
