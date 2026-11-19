@@ -39,6 +39,18 @@ TECNOLOGIAS = {
     "Swift": "swift",
     "Data Science": "data scientist",
     "Machine Learning": "machine learning",
+    # Ampliación pedida por el profesor (19/11/2026)
+    "Power BI": "power bi",
+    "Tableau": "tableau",
+    "Excel": "excel",
+    "Git": "git",
+    "GitHub": "github",
+    "Docker": "docker",
+    "Spark": "spark",
+    "Google Cloud": "google cloud",
+    "Linux": "linux",
+    "Ciberseguridad": "ciberseguridad",
+    "IA generativa": "ia generativa",
 }
 
 # Clave: ciudad normalizada. Valor: término de búsqueda (parámetro "where").

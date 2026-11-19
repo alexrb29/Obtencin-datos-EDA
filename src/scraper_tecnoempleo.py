@@ -31,11 +31,11 @@ BASE = "https://www.tecnoempleo.com"
 USER_AGENT = "ProyectoEDA-Universidad/1.0 (proyecto academico; contacto: TODO-email)"
 PAUSA_SEGUNDOS = 5
 
-# TODO (Vahab): copiad aquí la URL de un listado filtrado por ciudad tal como aparece
-# en el navegador, poniendo {pagina} donde vaya el número de página.
+# Listados de ofertas filtrados por provincia (parámetro pr): 263 = Madrid, 240 = Barcelona.
+# El número de página va en el parámetro pagina.
 URLS_LISTADO = {
-    "Madrid": BASE + "/TODO-url-listado-madrid?pagina={pagina}",
-    "Barcelona": BASE + "/TODO-url-listado-barcelona?pagina={pagina}",
+    "Madrid": BASE + "/ofertas-trabajo/?pr=,263,&pagina={pagina}",
+    "Barcelona": BASE + "/ofertas-trabajo/?pr=,240,&pagina={pagina}",
 }
 
 sesion = requests.Session()

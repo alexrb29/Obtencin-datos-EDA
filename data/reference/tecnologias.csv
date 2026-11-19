@@ -18,4 +18,15 @@ Go,go;golang
 Kotlin,kotlin
 Swift,swift;ios
 Data Science,data scientist;data science;científico de datos
-Machine Learning,machine learning;ml;deep learning;ia;inteligencia artificial
+Machine Learning,machine learning;ml;deep learning
+Power BI,power bi;powerbi;power-bi
+Tableau,tableau
+Excel,excel;vba;power query
+Git,git;gitlab;bitbucket
+GitHub,github;github actions
+Docker,docker;contenedores
+Spark,spark;apache spark;pyspark;databricks
+Google Cloud,google cloud;gcp;bigquery
+Linux,linux;bash;shell scripting
+Ciberseguridad,ciberseguridad;cybersecurity;seguridad informática;pentesting;soc
+IA generativa,ia generativa;inteligencia artificial generativa;genai;llm;openai;langchain
