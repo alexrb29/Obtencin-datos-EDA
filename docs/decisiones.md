@@ -19,3 +19,4 @@ Sirve para escribir el punto 6 de la memoria: decisiones, sus motivos, dificulta
 | 2026-11-19 | Alex | Ampliar la lista de tecnologías de 20 a 31: Power BI, Tableau, Excel, Git, GitHub, Docker, Spark, Google Cloud, Linux, Ciberseguridad e IA generativa | Lo pidió el profesor; se añaden herramientas de análisis de datos y áreas con más crecimiento en las ofertas (datos, DevOps, cloud, ciberseguridad, IA) | `data/reference/tecnologias.csv`, `src/config.py` (consultas a Adzuna) |
 | 2026-11-19 | Alex | Quitar "ia" e "inteligencia artificial" de los alias de Machine Learning | "ia" coincide con muchas palabras y se solapa con la nueva categoría IA generativa | Normalización de tecnologías |
 | | | | | |
+| 2026-11-19 | Alex | Añadir Google Colab, Vercel y Supabase (34 tecnologías en total) | Herramientas usadas en el propio curso; sirve para ver si el mercado las pide | `data/reference/tecnologias.csv`, `src/config.py` |

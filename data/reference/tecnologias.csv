@@ -30,3 +30,6 @@ Google Cloud,google cloud;gcp;bigquery
 Linux,linux;bash;shell scripting
 Ciberseguridad,ciberseguridad;cybersecurity;seguridad informática;pentesting;soc
 IA generativa,ia generativa;inteligencia artificial generativa;genai;llm;openai;langchain
+Google Colab,google colab;colab;colaboratory
+Vercel,vercel
+Supabase,supabase

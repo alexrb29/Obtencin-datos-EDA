@@ -51,6 +51,9 @@ TECNOLOGIAS = {
     "Linux": "linux",
     "Ciberseguridad": "ciberseguridad",
     "IA generativa": "ia generativa",
+    "Google Colab": "colab",
+    "Vercel": "vercel",
+    "Supabase": "supabase",
 }
 
 # Clave: ciudad normalizada. Valor: término de búsqueda (parámetro "where").
