@@ -6,7 +6,7 @@ Punto 2 del enunciado: direcciones consultadas, fecha de obtención, campos reco
 
 | Campo | Valor |
 |---|---|
-| Responsable | Alex |
+| Responsable | Vahab |
 | Documentación | https://developer.adzuna.com/docs/search |
 | Endpoints | `GET /v1/api/jobs/es/search/{pagina}`, `GET /v1/api/jobs/es/histogram`, `GET /v1/api/jobs/es/categories` |
 | Parámetros | `what` (tecnología), `where` (ciudad), `category=it-jobs`, `results_per_page=50` |
@@ -34,7 +34,7 @@ _Revisar y completar con la salida de `python src/adzuna.py --prueba`._
 
 | Campo | Valor |
 |---|---|
-| Responsable | Vahab |
+| Responsable | Alex |
 | URL base | https://www.tecnoempleo.com/ |
 | URLs de listado | General: `https://www.tecnoempleo.com/ofertas-trabajo/?pagina=N` (paginación comprobada el 2026-11-18). Filtradas por Madrid y Barcelona: _pendiente_ (marcar la provincia en la web y copiar la URL). |
 | Fecha de obtención | _pendiente_ |

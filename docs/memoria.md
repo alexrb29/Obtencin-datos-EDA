@@ -14,8 +14,8 @@
 
 ## 2. Obtención de los datos
 
-### 2.1 API de Adzuna *(Alex)*
-### 2.2 Web scraping de Tecnoempleo *(Vahab)*
+### 2.1 API de Adzuna *(Vahab)*
+### 2.2 Web scraping de Tecnoempleo *(Alex)*
 ### 2.3 Qué aporta cada fuente *(ambos)*
 
 Detalle técnico en `docs/fuentes.md`.

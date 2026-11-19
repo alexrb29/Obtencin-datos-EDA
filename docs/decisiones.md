@@ -15,4 +15,5 @@ Sirve para escribir el punto 6 de la memoria: decisiones, sus motivos, dificulta
 | 2026-11-18 | Vahab | Normas del scraping: User-Agent identificado con email de contacto, pausa entre peticiones, parar ante 403/429 y no guardar datos personales (nombres, emails o teléfonos de reclutadores) | Buenas prácticas y RGPD | `src/scraper_tecnoempleo.py` |
 | 2026-11-18 | Vahab | Registro en la API de Adzuna con el uso «Personal or academic research» | Los términos de Adzuna permiten la investigación académica; el análisis comercial requiere acuerdo escrito. Obliga a citar «The Adzuna API» | Obtención (API) y README |
 | 2026-11-18 | Vahab | Propuesta (pendiente de confirmar): repositorio privado con acceso del profesor | Los datos originales incluyen el texto completo de las ofertas, que es contenido de terceros | GitHub |
+| 2026-11-19 | Alex y Vahab | Cambio de reparto: Alex se encarga del scraping de Tecnoempleo y Vahab de la API de Adzuna (el resto del reparto no cambia) | Vahab ya tiene las credenciales de Adzuna y había hecho la prueba de la API | Obtención; memoria (puntos 2 y 6) |
 | | | | | |

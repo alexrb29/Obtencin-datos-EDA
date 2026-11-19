@@ -6,8 +6,8 @@ Proyecto en parejas de la asignatura de obtención de datos y análisis explorat
 
 | Nombre | Responsabilidades principales |
 |---|---|
-| Alex Rodríguez | API de Adzuna, unión de fuentes, EDA de variables numéricas, preguntas 1 y 2 |
-| Vahab Azimzadeh | Scraping del portal de empleo, diccionario de datos, EDA de variables categóricas y ausentes, pregunta 3 |
+| Alex Rodríguez | Scraping de Tecnoempleo, unión de fuentes, EDA de variables numéricas, preguntas 1 y 2 |
+| Vahab Azimzadeh | API de Adzuna, diccionario de datos, EDA de variables categóricas y ausentes, pregunta 3 |
 
 El reparto detallado y su seguimiento están en el tablero de Trello del proyecto y se resumen en la memoria (`docs/memoria.md`).
 
