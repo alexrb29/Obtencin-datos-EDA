@@ -33,7 +33,7 @@ sys.path.append(str(Path(__file__).resolve().parent))
 from config import RAW_TECNOEMPLEO  # noqa: E402
 
 BASE = "https://www.tecnoempleo.com"
-USER_AGENT = "ProyectoEDA-Universidad/1.0 (proyecto academico; contacto: TODO-email)"
+USER_AGENT = "ProyectoEDA-Universidad/1.0 (proyecto academico; contacto: arodriguezb3@student.planetafp.es)"
 PAUSA_SEGUNDOS = 5
 
 # Listados de ofertas filtrados por provincia (parámetro pr): 263 = Madrid, 240 = Barcelona.
