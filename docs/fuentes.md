@@ -36,8 +36,8 @@ _Revisar y completar con la salida de `python src/adzuna.py --prueba`._
 |---|---|
 | Responsable | Alex |
 | URL base | https://www.tecnoempleo.com/ |
-| URLs de listado | General: `https://www.tecnoempleo.com/ofertas-trabajo/?pagina=N` (paginación comprobada el 2026-11-18). Filtradas por Madrid y Barcelona: _pendiente_ (marcar la provincia en la web y copiar la URL). |
-| Fecha de obtención | _pendiente_ |
+| URLs de listado | General: `https://www.tecnoempleo.com/ofertas-trabajo/?pagina=N` (paginación comprobada el 2026-11-18). Filtradas por provincia (parámetro `pr`): Madrid `https://www.tecnoempleo.com/ofertas-trabajo/?pr=,263,&pagina=N` (35 páginas) y Barcelona `https://www.tecnoempleo.com/ofertas-trabajo/?pr=,240,&pagina=N` (22 páginas). |
+| Fecha de obtención | 2026-11-19 (1.652 filas, 1.297 ofertas distintas; HTML original en `data/raw/tecnoempleo/2026-11-19/html/`) |
 | robots.txt | Revisado el 2026-11-18. Para `User-agent: *` prohíbe rutas como `/graficos_estadisticas/`, `/profesionales/`, `/accesoempresa.php`, `/_ajax/select_ajax.php` o `/demanda-trabajo-informatica.php?`, pero no los listados (`/ofertas-trabajo/`, incluida la paginación `?pagina=N`) ni las páginas de oferta. Bloquea por completo a los bots de IA (AnthropicBot, ClaudeBot, GPTBot…), así que las pruebas y el scraping los ejecutamos nosotros con nuestro script. Captura en `docs/capturas/2026-11-18_robots_tecnoempleo.png`. |
 | Aviso legal / condiciones | «Marco Normativo» (https://www.tecnoempleo.com/politicaymarco.php), revisado el 2026-11-18. Regula el uso por candidatos y empresas registrados y **no menciona** scraping, robots ni extracción automática. Solo reserva los derechos de forma genérica (copyright y derechos de explotación, apartados 1 y 12). Titular: CYBEREMPLEO, S.L. Base legal de nuestra extracción: arts. 134.1 y 135.1.b de la Ley de Propiedad Intelectual (extracción con fines de ilustración de la enseñanza, no comercial y citando la fuente). Captura en `docs/capturas/2026-11-18_tecnoempleo_marco_normativo.png`. |
 | Pausa entre peticiones | 5 s |
