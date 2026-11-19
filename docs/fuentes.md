@@ -43,7 +43,9 @@ _Revisar y completar con la salida de `python src/adzuna.py --prueba`._
 | Pausa entre peticiones | 5 s |
 | Script | `src/scraper_tecnoempleo.py` |
 
-**Campos recogidos:** `titulo`, `empresa`, `ubicacion`, `modalidad`, `salario_texto`, `tecnologias`, `fecha_texto`, `url`, `ciudad_busqueda`, `fecha_obtencion`.
+**Campos recogidos (por oferta, desde el listado):** `id_oferta`, `titulo`, `empresa`, `ubicacion`, `modalidad` (Presencial, Híbrido, 100% remoto), `categoria` (área del puesto), `salario_texto` (p. ej. "18.000€ - 21.000€ b/a"), `tipo_contrato`, `tecnologias` (etiquetas separadas por ";"), `fecha_texto`, `estado` (Nueva/Actualizada), `urgente`, `descripcion_resumen`, `url`, `ciudad_busqueda`, `pagina`, `fecha_obtencion`.
+
+**Observaciones de una página de prueba (Madrid, 19/11/2026, 30 ofertas):** 13 con salario (43 %); 20 eran "100% remoto" y no indican ciudad, así que pueden aparecer también en el listado de Barcelona (deduplicar por `id_oferta`).
 
 **Qué aporta:** modalidad de trabajo (remoto, híbrido o presencial) y salario declarado por la empresa.
 
