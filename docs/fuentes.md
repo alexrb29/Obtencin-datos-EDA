@@ -57,3 +57,16 @@ Scripts en `pruebas/`.
 - **Implicación:** salario, fecha, empresa y ubicación se pueden leer del JSON-LD de cada oferta, con moneda y unidad explícitas, en lugar de depender solo de selectores CSS del listado. Pendiente de decidir cómo combinarlo con el listado.
 - Capturas: `docs/capturas/2026-11-18_tecnoempleo_listado.png`, `2026-11-18_prueba_tecnoempleo_listado.png` y `2026-11-18_prueba_tecnoempleo_ofertas.png`.
 
+## 3. Fuentes descartadas
+
+### ticjob.es (scraping)
+
+- robots.txt (2026-11-18): solo prohíbe `/legal`, `/disclaimer`, `/privacy` y `/online-cv`; listados y ofertas permitidos.
+- La prueba (`pruebas/test_ticjob.py`) funcionó: HTML estático y JSON-LD `JobPosting` en cada oferta.
+- Se descarta porque: tiene unas 103 ofertas activas en toda España (7 de Python, 15 en Barcelona); de 40 ofertas revisadas solo 1 publicaba salario numérico; la ubicación del JSON-LD es la comunidad («Catalonia»), no la ciudad; y sus Condiciones de uso (§2) prohíben copiar o descargar la web «por completo o en parte».
+- Capturas: `docs/capturas/2026-11-18_robots_ticjob.png` y `2026-11-18_prueba_ticjob.png`.
+
+### InfoJobs (scraping)
+
+- robots.txt (2026-11-18): para `User-agent: *` prohíbe las URL antiguas de listados y ofertas (`/ofertas_lista.cfm`, `/ver-oferta.xhtml`, `/visualizar_oferta…`, `/buscar.empleo/`), además de `/react` y `/webapp`; bloquea por completo al agregador `jobrapido`.
+- Se descarta sin probarla: web en JavaScript, postura contraria a los agregadores y no aporta nada que no den Tecnoempleo + Adzuna.

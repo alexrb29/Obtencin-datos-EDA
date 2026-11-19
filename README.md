@@ -29,7 +29,7 @@ Analizar las ofertas de empleo tecnológico publicadas en España para responder
 | [Adzuna API](https://developer.adzuna.com/) | API REST | Volumen de ofertas y salarios por tecnología y ciudad; histograma de salarios | `docs/fuentes.md` |
 | [Tecnoempleo](https://www.tecnoempleo.com/) | Web scraping | Modalidad (remoto/híbrido/presencial), salario declarado y tecnologías de cada oferta | `docs/fuentes.md` |
 
-En `docs/fuentes.md` están las URL consultadas, la fecha de obtención, los campos recogidos, el procedimiento y la revisión de `robots.txt` y de las condiciones de uso.
+En `docs/fuentes.md` están las URL consultadas, la fecha de obtención, los campos recogidos, el procedimiento y la revisión de `robots.txt` y de las condiciones de uso. Allí también se explican las fuentes que probamos y descartamos (ticjob.es e InfoJobs).
 
 ## Organización del repositorio
 
