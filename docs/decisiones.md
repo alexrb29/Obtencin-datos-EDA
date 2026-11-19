@@ -20,3 +20,4 @@ Sirve para escribir el punto 6 de la memoria: decisiones, sus motivos, dificulta
 | 2026-11-19 | Alex | Quitar "ia" e "inteligencia artificial" de los alias de Machine Learning | "ia" coincide con muchas palabras y se solapa con la nueva categoría IA generativa | Normalización de tecnologías |
 | | | | | |
 | 2026-11-19 | Alex | Añadir Google Colab, Vercel y Supabase (34 tecnologías en total) | Herramientas usadas en el propio curso; sirve para ver si el mercado las pide | `data/reference/tecnologias.csv`, `src/config.py` |
+| 2026-11-19 | Alex | Quitar Ciberseguridad de la lista (33 tecnologías) | Es un área profesional, no una tecnología concreta | `data/reference/tecnologias.csv`, `src/config.py` |

@@ -49,7 +49,6 @@ TECNOLOGIAS = {
     "Spark": "spark",
     "Google Cloud": "google cloud",
     "Linux": "linux",
-    "Ciberseguridad": "ciberseguridad",
     "IA generativa": "ia generativa",
     "Google Colab": "colab",
     "Vercel": "vercel",
