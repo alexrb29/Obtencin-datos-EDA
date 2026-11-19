@@ -36,13 +36,24 @@ _Revisar y completar con la salida de `python src/adzuna.py --prueba`._
 |---|---|
 | Responsable | Vahab |
 | URL base | https://www.tecnoempleo.com/ |
-| URLs de listado | _pendiente_ |
+| URLs de listado | General: `https://www.tecnoempleo.com/ofertas-trabajo/?pagina=N` (paginación comprobada el 2026-11-18). Filtradas por Madrid y Barcelona: _pendiente_ (marcar la provincia en la web y copiar la URL). |
 | Fecha de obtención | _pendiente_ |
-| robots.txt | Revisado el _fecha_. Para `User-agent: *` prohíbe rutas como `/graficos_estadisticas/`, `/profesionales/` o `/accesoempresa.php`, pero no los listados de ofertas. Captura en `docs/capturas/`. |
-| Aviso legal / condiciones | _pendiente_ |
+| robots.txt | Revisado el 2026-11-18. Para `User-agent: *` prohíbe rutas como `/graficos_estadisticas/`, `/profesionales/`, `/accesoempresa.php`, `/_ajax/select_ajax.php` o `/demanda-trabajo-informatica.php?`, pero no los listados (`/ofertas-trabajo/`, incluida la paginación `?pagina=N`) ni las páginas de oferta. Bloquea por completo a los bots de IA (AnthropicBot, ClaudeBot, GPTBot…), así que las pruebas y el scraping los ejecutamos nosotros con nuestro script. Captura en `docs/capturas/2026-11-18_robots_tecnoempleo.png`. |
+| Aviso legal / condiciones | «Marco Normativo» (https://www.tecnoempleo.com/politicaymarco.php), revisado el 2026-11-18. Regula el uso por candidatos y empresas registrados y **no menciona** scraping, robots ni extracción automática. Solo reserva los derechos de forma genérica (copyright y derechos de explotación, apartados 1 y 12). Titular: CYBEREMPLEO, S.L. Base legal de nuestra extracción: arts. 134.1 y 135.1.b de la Ley de Propiedad Intelectual (extracción con fines de ilustración de la enseñanza, no comercial y citando la fuente). Captura en `docs/capturas/2026-11-18_tecnoempleo_marco_normativo.png`. |
 | Pausa entre peticiones | 5 s |
 | Script | `src/scraper_tecnoempleo.py` |
 
 **Campos recogidos:** `titulo`, `empresa`, `ubicacion`, `modalidad`, `salario_texto`, `tecnologias`, `fecha_texto`, `url`, `ciudad_busqueda`, `fecha_obtencion`.
 
 **Qué aporta:** modalidad de trabajo (remoto, híbrido o presencial) y salario declarado por la empresa.
+
+### Pruebas (2026-11-18)
+
+Scripts en `pruebas/`.
+
+- **Listado general:** 1.767 ofertas de informática y telecomunicaciones. Por provincia: Madrid 887, Barcelona 324, Valencia 115, Bizkaia 80, Zaragoza 48, Sevilla 42, Málaga 30. Por modalidad: híbrido 1.236, presencial 821, sin especificar 618, 100 % remoto 306. La suma por modalidad (2.981) supera el total, así que una oferta puede contarse más de una vez (quizá por tener varias ubicaciones): revisarlo en la limpieza.
+- **`test_fuente.py` sobre el listado:** status 200; HTML estático (el título de una oferta aparece en el HTML sin ejecutar JavaScript); 49 símbolos «€» (parte pueden ser filtros de salario de la barra lateral); sin JSON-LD.
+- **`test_fuente.py` sobre 3 ofertas:** las 3 traen JSON-LD `JobPosting` con `title`, `datePosted`, `description`, `employmentType`, `hiringOrganization`, `jobLocation`, `identifier` y `directApply`. 1 de 3 trae `baseSalary` (EUR, 54.000–60.000, `unitText: YEAR`). Algunas añaden `jobLocationType` y `applicantLocationRequirements` (ofertas en remoto).
+- **Implicación:** salario, fecha, empresa y ubicación se pueden leer del JSON-LD de cada oferta, con moneda y unidad explícitas, en lugar de depender solo de selectores CSS del listado. Pendiente de decidir cómo combinarlo con el listado.
+- Capturas: `docs/capturas/2026-11-18_tecnoempleo_listado.png`, `2026-11-18_prueba_tecnoempleo_listado.png` y `2026-11-18_prueba_tecnoempleo_ofertas.png`.
+
