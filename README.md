@@ -31,6 +31,8 @@ Analizar las ofertas de empleo tecnológico publicadas en España para responder
 
 En `docs/fuentes.md` están las URL consultadas, la fecha de obtención, los campos recogidos, el procedimiento y la revisión de `robots.txt` y de las condiciones de uso. Allí también se explican las fuentes que probamos y descartamos (ticjob.es e InfoJobs).
 
+**Atribución.** Datos obtenidos de [The Adzuna API](https://www.adzuna.es) y de [Tecnoempleo](https://www.tecnoempleo.com), con fines exclusivamente académicos y no comerciales.
+
 ## Organización del repositorio
 
 ```
