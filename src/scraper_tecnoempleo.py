@@ -52,11 +52,20 @@ _robots = None
 
 
 def permitido(url: str) -> bool:
-    """Consulta robots.txt (se descarga una sola vez)."""
+    """Consulta robots.txt (se descarga una sola vez).
+
+    Lo descargamos con nuestra sesión (y nuestro User-Agent) en lugar de usar
+    RobotFileParser.read(): esa función se identifica como "Python-urllib" y, si la
+    web le responde con un error 401/403, da por prohibido todo el sitio.
+    """
     global _robots
     if _robots is None:
-        _robots = robotparser.RobotFileParser(BASE + "/robots.txt")
-        _robots.read()
+        r = sesion.get(BASE + "/robots.txt", timeout=30)
+        if r.status_code != 200:
+            sys.exit(f"No se pudo leer robots.txt (HTTP {r.status_code}). "
+                     "No se descarga nada hasta poder comprobarlo.")
+        _robots = robotparser.RobotFileParser()
+        _robots.parse(r.text.splitlines())
     return _robots.can_fetch(USER_AGENT, url)
 
 
