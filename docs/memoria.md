@@ -24,7 +24,7 @@ Partimos de 20 tecnologías habituales en desarrollo, datos y cloud. A petición
 - **Áreas con más crecimiento en las ofertas tecnológicas de 2025–2026:** Docker y Linux (perfiles DevOps y de sistemas), Spark y Google Cloud (ingeniería de datos), e IA generativa. Según el informe *Tech Cities 2026* de Experis, el perfil de Data Engineer es el que más ha crecido (+42 % entre 2023 y 2025), y según InfoJobs las ofertas que piden herramientas de inteligencia artificial crecieron un 64 % en el último año.
 - **Herramientas que usamos en el curso:** Google Colab, Vercel y Supabase, para comprobar si el mercado las pide.
 
-Añadimos y después quitamos Ciberseguridad. _Pendiente: motivo._ La lista final tiene **33 tecnologías**.
+En una primera versión incluimos también Ciberseguridad, porque es uno de los perfiles más demandados, pero después la quitamos: no forma parte de nuestra especialidad. Estudiamos Inteligencia Artificial y Big Data, y la ciberseguridad es una rama distinta, así que preferimos centrar el análisis en las tecnologías de nuestro campo. La lista final tiene **33 tecnologías**.
 
 ## 2. Obtención de los datos
 

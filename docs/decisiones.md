@@ -20,7 +20,7 @@ Sirve para escribir el punto 6 de la memoria: decisiones, sus motivos, dificulta
 | 2026-11-19 | Alex | Quitar "ia" e "inteligencia artificial" de los alias de Machine Learning | "ia" coincide con muchas palabras y se solapa con la nueva categoría IA generativa | Normalización de tecnologías |
 | | | | | |
 | 2026-11-19 | Alex | Añadir Google Colab, Vercel y Supabase (34 tecnologías en total) | Herramientas usadas en el propio curso; sirve para ver si el mercado las pide | `data/reference/tecnologias.csv`, `src/config.py` |
-| 2026-11-19 | Alex | Quitar Ciberseguridad de la lista (33 tecnologías) | _Pendiente: añadir el motivo_ | `data/reference/tecnologias.csv`, `src/config.py` |
+| 2026-11-19 | Alex | Quitar Ciberseguridad de la lista (33 tecnologías) | No forma parte de nuestra especialidad (IA y Big Data); es una rama de estudios distinta | `data/reference/tecnologias.csv`, `src/config.py` |
 | 2026-11-19 | Alex | Tecnoempleo: una fila por oferta (`id_oferta`), guardando en qué listados apareció | Las 316 ofertas 100 % remotas aparecían en el listado de Madrid y en el de Barcelona | Limpieza; conteos por ciudad |
 | 2026-11-19 | Alex | Ciudad agrupada en Madrid, Barcelona, Otra ciudad y Sin ciudad (remoto) | Los listados incluyen ofertas de otras provincias (p. ej. 21 de Cajamar en Almería) y las remotas no tienen ciudad | Pregunta Madrid vs Barcelona |
 | 2026-11-19 | Alex | Salario a € brutos/año: mensual × 12, por hora × 1.760 (40 h × 44 semanas) | 387 salarios anuales, 3 mensuales y 2 por hora: hay que compararlos en la misma escala | Variable salario |
