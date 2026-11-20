@@ -98,7 +98,7 @@ Cuaderno `notebooks/03_eda_univariante.ipynb`, sección 3.1. De momento con los 
 - **Rango salarial.** La diferencia mediana entre el salario máximo y el mínimo es de 6.000 €; un 4,8 % de las ofertas da un salario fijo.
 - **Valores atípicos.** Con la regla del rango intercuartílico, 13 ofertas superan los 71.250 €. Las revisamos una a una: son puestos senior o directivos (arquitectos, *leads*, CTO, Head of AI) y un perfil freelance por horas. Son ofertas reales y las mantenemos. Las 9 ofertas con salario de posible jornada parcial apenas cambian la media (de 38.879 a 39.401 €) y no cambian la mediana.
 - **Antigüedad.** La mitad de las ofertas se publicó hace 8 días o menos, pero 96 llevan más de un año en el portal (hasta 9 años), lo que da una distribución muy asimétrica (5,06).
-- **Número de tecnologías.** El 47 % de las ofertas no pide ninguna de las 33 tecnologías del estudio; la mayoría del resto pide una o dos.
+- **Número de tecnologías.** El 47 % de las ofertas no pide ninguna de las 33 tecnologías del estudio; la mayoría del resto pide una o dos. Cuando piden solo una, lo más habitual es SAP, Java o SQL; las parejas más comunes son Python + SQL, Java + SQL y Angular + Java. Las ofertas sin ninguna tecnología del estudio son sobre todo de ingeniería e industria, ciberseguridad y gestión de proyectos, y llevan etiquetas que no están en nuestra lista (Windows, C++, COBOL, C o redes).
 ### 4.2 Variables categóricas y valores ausentes *(Vahab)*
 
 ## 5. Análisis de relaciones y resultados
