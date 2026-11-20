@@ -5,7 +5,7 @@
 
 > Borrador con la estructura del enunciado (puntos 1 a 6). Cada sección indica quién la redacta; el otro la revisa.
 >
-> **Estado (20/11/2026):** redactados, con los datos de Tecnoempleo, la obtención por scraping (2.2), su limpieza (3.2), el EDA de variables numéricas (4.1) y las preguntas P1 (5.1) y P2 (5.2). Se actualizarán al unir los datos de Jooble.
+> **Estado (20/11/2026):** redactados, con los datos de Tecnoempleo, la obtención por scraping (2.2), su limpieza (3.2), el EDA de variables numéricas (4.1), las preguntas P1 (5.1) y P2 (5.2) y las herramientas de la parte de Alex (6). Se actualizarán al unir los datos de Jooble. Pendientes: la parte de Vahab (API Jooble), la unión de fuentes (3.3) y las conclusiones generales (5.5).
 
 ## 1. Elección del tema, preguntas y ámbito *(ambos)*
 
@@ -120,6 +120,7 @@ Cuaderno `notebooks/04_eda_bivariante.ipynb`, pregunta P2. Solo cuentan las ofer
 - **Volumen.** Madrid tiene unas 2,5 veces más ofertas que Barcelona (659 frente a 267). Barcelona publica el salario algo más a menudo (34 % frente a 29 %).
 - **Qué se pide en cada ciudad.** Un mapa de calor de las 15 tecnologías más pedidas muestra que Madrid concentra más de lo normal Linux (73 % de sus ofertas), Excel (72 %) y JavaScript (65 %); Barcelona tiene más peso en desarrollo web (Node.js y TypeScript, 35 %; React, 28 %); y SAP, Kubernetes, Node.js y AWS se ofrecen mucho en remoto (47–50 %). Excel no aparece en ninguna oferta remota.
 - **Salario global.** Madrid queda ligeramente por encima (mediana de 37.500 € frente a 36.000 €), pero la diferencia **no es estadísticamente significativa** (prueba de Mann-Whitney, p = 0,11).
+- **Salarios atípicos de Madrid.** Los 13 salarios de Madrid por encima de 65.250 € son puestos de dirección o de mucha especialización: CTO, Head of AI Engineering, arquitectos de soluciones, de integración SAP y de seguridad, *leads* de datos y consultores de SAP S/4HANA. Piden sobre todo SAP avanzado (S/4HANA, ABAP), arquitectura y cloud (AWS, DevOps), el ecosistema de Microsoft (Dynamics 365, Microsoft 365), datos (SQL, Python, Scala), metodologías ágiles e inglés avanzado. **10 de las 13 ofertas las publica Michael Page**, una consultora de selección de perfiles senior, así que los salarios más altos de Madrid dependen en buena parte de un solo intermediario. Lo tenemos en cuenta como limitación.
 - **Efecto composición.** Los puestos de helpdesk y soporte, los peor pagados, pesan el triple en Barcelona (24 % de las ofertas con salario, frente al 8 % en Madrid). Al quitarlos, Barcelona pasa por delante en mediana (42.000 € frente a 39.000 €). Comparando dentro de la misma categoría de puesto, Barcelona anuncia salarios iguales o más altos en 4 de las 6 categorías comparables (jefe de proyecto, consultor, ingeniero y analista programador).
 - **Conclusión.** Madrid ofrece mucho más empleo tecnológico, pero no paga más por el mismo tipo de puesto: la diferencia global se explica por la mezcla de puestos de cada ciudad. Las comparaciones por categoría se basan en grupos pequeños (5–24 salarios por ciudad), así que son orientativas.
 ### 5.3 Modalidad de trabajo *(Vahab)*
@@ -130,6 +131,16 @@ Cuaderno `notebooks/04_eda_bivariante.ipynb`, pregunta P2. Solo cuentan las ofer
 
 - Distribución del trabajo entre los integrantes.
 - Herramientas empleadas.
+
+### Herramientas *(parte de Alex)*
+
+- **Python** como lenguaje de todo el proyecto, con un entorno virtual (`.venv`) y las librerías de `requirements.txt`.
+- **requests** y **BeautifulSoup** para descargar y leer las páginas de Tecnoempleo.
+- **pandas** y **numpy** para limpiar y transformar los datos.
+- **matplotlib** y **seaborn** para los gráficos, y **scipy** para las pruebas estadísticas (Kruskal-Wallis, Mann-Whitney y correlación de Spearman).
+- **Jupyter** dentro de **Visual Studio Code** para los cuadernos.
+- **Git y GitHub** para el control de versiones; la parte de scraping se ha desarrollado en la rama `web-scraping`.
+- **Trello** para repartir y seguir las tareas.
 - Dificultades encontradas.
 
 ### Dificultades de la parte de scraping *(Alex)*
