@@ -5,7 +5,7 @@
 
 > Borrador con la estructura del enunciado (puntos 1 a 6). Cada sección indica quién la redacta; el otro la revisa.
 >
-> **Estado (19/11/2026):** redactadas la obtención por scraping (2.2) y su limpieza (3.2).
+> **Estado (20/11/2026):** redactados, con los datos de Tecnoempleo, la obtención por scraping (2.2), su limpieza (3.2), el EDA de variables numéricas (4.1) y las preguntas P1 (5.1) y P2 (5.2). Se actualizarán al unir los datos de Jooble.
 
 ## 1. Elección del tema, preguntas y ámbito *(ambos)*
 
@@ -89,12 +89,37 @@ Qué representa cada fila, número de observaciones y variables, significado, un
 ## 4. EDA univariante
 
 ### 4.1 Variables numéricas *(Alex)*
+
+Cuaderno `notebooks/03_eda_univariante.ipynb`, sección 3.1. De momento con los datos de Tecnoempleo; se actualizará al unir las fuentes.
+
+- **Salario.** Solo el 30 % de las ofertas (392) publica salario. El salario medio anunciado tiene una **mediana de 37.500 €** brutos al año; la mitad central de las ofertas está entre 30.000 y 46.500 €, y el 90 % entre 19.500 y 66.000 €.
+- **Forma de la distribución.** Es asimétrica hacia la derecha (asimetría 0,90): unas pocas ofertas muy bien pagadas elevan la media (38.879 €) por encima de la mediana. Por eso, para comparar grupos usamos la mediana y el rango intercuartílico. Probamos la escala logarítmica, pero corregía de más la asimetría (−0,42), así que trabajamos en euros.
+- **Tramos de 3.000 €.** El 95 % de los salarios mínimos son múltiplos de 3.000 €, lo que indica que el portal hace elegir el salario por tramos. Por eso los histogramas usan intervalos de 3.000 €.
+- **Rango salarial.** La diferencia mediana entre el salario máximo y el mínimo es de 6.000 €; un 4,8 % de las ofertas da un salario fijo.
+- **Valores atípicos.** Con la regla del rango intercuartílico, 13 ofertas superan los 71.250 €. Las revisamos una a una: son puestos senior o directivos (arquitectos, *leads*, CTO, Head of AI) y un perfil freelance por horas. Son ofertas reales y las mantenemos. Las 9 ofertas con salario de posible jornada parcial apenas cambian la media (de 38.879 a 39.401 €) y no cambian la mediana.
+- **Antigüedad.** La mitad de las ofertas se publicó hace 8 días o menos, pero 96 llevan más de un año en el portal (hasta 9 años), lo que da una distribución muy asimétrica (5,06).
+- **Número de tecnologías.** El 47 % de las ofertas no pide ninguna de las 33 tecnologías del estudio; la mayoría del resto pide una o dos.
 ### 4.2 Variables categóricas y valores ausentes *(Vahab)*
 
 ## 5. Análisis de relaciones y resultados
 
 ### 5.1 Tecnologías y salario *(Alex)*
+
+Cuaderno `notebooks/04_eda_bivariante.ipynb`, pregunta P1. Como solo el 30 % de las ofertas publica salario, comparamos salarios solo en las tecnologías con **al menos 10 salarios** (10 de las 33) y mostramos siempre el tamaño de cada grupo.
+
+- **Demanda.** Las tecnologías más pedidas son Java (141 ofertas), SQL (115), SAP (93) y Python (91), seguidas de AWS y Azure. Google Colab, Vercel y Supabase no aparecen en ninguna oferta.
+- **Salario.** Las mejor pagadas son **SAP y .NET** (mediana de 49.500 €), seguidas de JavaScript, AWS y Azure (42.000–42.750 €). Java, Linux y Python están en torno a la mediana general (37.500 €), SQL algo por debajo (33.750 €) y **Excel muy por debajo** (21.750 €), porque aparece sobre todo en puestos de tienda, reparación o administración.
+- **Más demanda no implica más salario:** Java, SQL y Python son de las más pedidas, pero no de las mejor pagadas.
+- **Significación.** Las diferencias entre tecnologías son significativas según la prueba de Kruskal-Wallis (p < 0,001), y lo siguen siendo sin Excel (p = 0,024).
+- **Limitación.** Los grupos son pequeños (10–30 salarios) y sus rangos se solapan, así que el orden exacto entre tecnologías cercanas no es fiable.
 ### 5.2 Madrid frente a Barcelona *(Alex)*
+
+Cuaderno `notebooks/04_eda_bivariante.ipynb`, pregunta P2. Solo cuentan las ofertas con ciudad Madrid o Barcelona; las 100 % remotas no tienen ciudad.
+
+- **Volumen.** Madrid tiene unas 2,5 veces más ofertas que Barcelona (659 frente a 267). Barcelona publica el salario algo más a menudo (34 % frente a 29 %).
+- **Salario global.** Madrid queda ligeramente por encima (mediana de 37.500 € frente a 36.000 €), pero la diferencia **no es estadísticamente significativa** (prueba de Mann-Whitney, p = 0,11).
+- **Efecto composición.** Los puestos de helpdesk y soporte, los peor pagados, pesan el triple en Barcelona (24 % de las ofertas con salario, frente al 8 % en Madrid). Al quitarlos, Barcelona pasa por delante en mediana (42.000 € frente a 39.000 €). Comparando dentro de la misma categoría de puesto, Barcelona anuncia salarios iguales o más altos en 4 de las 6 categorías comparables (jefe de proyecto, consultor, ingeniero y analista programador).
+- **Conclusión.** Madrid ofrece mucho más empleo tecnológico, pero no paga más por el mismo tipo de puesto: la diferencia global se explica por la mezcla de puestos de cada ciudad. Las comparaciones por categoría se basan en grupos pequeños (5–24 salarios por ciudad), así que son orientativas.
 ### 5.3 Modalidad de trabajo *(Vahab)*
 ### 5.4 Comparación entre fuentes y salarios estimados *(Vahab)*
 ### 5.5 Conclusiones y limitaciones *(ambos)*
